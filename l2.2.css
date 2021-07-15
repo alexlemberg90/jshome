@@ -1,0 +1,15 @@
+body {
+    margin-top: 20px;
+}
+.wrap {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.post-card {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 5px inset aqua;
+    width: 18%;
+}
