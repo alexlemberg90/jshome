@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    background-image: url("img/background2.jpg");
+    background-size: 100%;
+}
+.users-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+.user-block {
+    text-align: center;
+    color: wheat;
+    background-image: url("img/background1.jpg");
+    background-size: 100%;
+    border: 5px inset peachpuff;
+    width: 40%;
+    margin-bottom: 10px ;
+}
+.address-block:hover {
+    color: aqua;
+    transition: all 2s ease;
+}
