@@ -55,9 +55,14 @@ console.log(Leanne)
 // -  Створити функцію конструктор / клас  який описує об'єкт тегу
 
 
+class Attr {
+  constructor(name,info) {
+    this.name = name;
+    this.info = info;
+  };
+}
 
-
-class tag {
+class Tag {
   constructor(name,info,attributes) {
     this.name = name;
     this.info = info;
@@ -66,10 +71,10 @@ class tag {
 
 
 }
-let Tags = [
-  new tag('<a>','Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок.',
-    ['href - Задает адрес документа, на который следует перейти.',  ' rel - Отношения между ссылаемым и текущим документами.'])]
-console.log(Tags)
+let tags = [
+  new Tag('<a>','Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок.',
+    [new Attr('href','Задает адрес документа, на который следует перейти.'),new Attr('rel',' Отношения между ссылаемым и текущим документами.')])]
+console.log(tags)
 // Поля :
 //   -назва тегу ()
 // - опис його дій
