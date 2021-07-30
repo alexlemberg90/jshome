@@ -5,6 +5,17 @@
     <title>Shop</title>
 </head>
 <body>
+<script>
+    // На index2.html виводити записане в localstorage ім'я в div
 
+    let nameDiv = document.createElement('div');
+    let parseName = JSON.parse(localStorage.getItem('name'));
+    for (let parseNameElement of parseName) {
+        nameDiv.innerHTML = `Hello ${parseNameElement}`;
+    }
+    document.body.appendChild(nameDiv);
+
+
+</script>
 </body>
 </html>

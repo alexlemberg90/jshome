@@ -5,9 +5,60 @@
     <title>Shop</title>
 </head>
 <body>
-<form action="index2Shop.html">
-<input type="text" name="name">
-  <button>Save</button>
+<!--<form id="nameForm" action="index2Shop.html">-->
+<!--<input type="text" name="name">-->
+<!--  <button>Save</button>-->
+<!--</form>-->
+<form id="Shop" action="">
+    <input type="text" name="name" placeholder="name">
+    <input type="number" name="quantity" min="1" placeholder="quantity">
+    <input type="text" name="price" placeholder="prise">
+    <input type="url" name="image" placeholder="image url">
+    <button>ADD</button>
 </form>
+<a href="list.html">На сторінку товарів</a>
+<script>
+    // При відправці данних з форми, зберігати ім'я в localstorage, та переходити на index2.html.
+
+    // let nameForm = document.forms.nameForm;
+    // let parseName = JSON.parse(localStorage.getItem('name'))
+    // let names = parseName || [];
+    // nameForm.onsubmit = () => {
+    //     names.push(nameForm.name.value)
+    //     localStorage.setItem('name',JSON.stringify(names))
+    // }
+    // - Імітуємо наповнення інтернет магазину товарами :
+    //   Створити форму з наступними полями :
+    //   - назва товару
+    // - кількість товару
+    // - ціна товару
+    // - картинка товару (посилання з інтернету)
+    // Зберігати товари в масив в локалсорадж. При збережені товару з форми, action не повинно відбуватись.
+    let shopForm = document.forms.Shop;
+    let parseItem = JSON.parse(localStorage.getItem('item'));
+    let items = parseItem || [];
+
+    shopForm.onsubmit = (e) => {
+        e.preventDefault();
+        console.log(shopForm.name.value)
+        console.log(shopForm.quantity.value)
+        console.log(shopForm.price.value)
+        console.log(shopForm.image.value)
+        let item = {
+            name: shopForm.name.value,
+            quantity: shopForm.quantity.value,
+            price: shopForm.price.value,
+            image: shopForm.image.value
+        };
+        items.push(item)
+        localStorage.setItem('item', JSON.stringify(items))
+    };
+    //   створити елемент <a href='list.html'> На сторінку товарів</a>, та list.html, при переході на який відобразити на сторінці всі товари.
+
+    // На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
+    //   До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
+    //
+    //
+</script>
 </body>
 </html>
